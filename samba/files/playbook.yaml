@@ -1,0 +1,21 @@
+- hosts: localhost
+  gather_facts: False
+  roles:
+    - role: samba
+      vars:
+        samba:
+          workgroup: test
+          shares:
+            test-box: |
+              [test-box]
+              comment = Test-Box drive
+              path = /media/TBox01
+              valid users = @users
+              force group = users
+              create mask = 0660
+              directory mask = 0771
+              read only = no
+          users:
+            - name: test_user
+              passwd: $6$rounds=656000$test$szDR24fMEwOoHXt56CPw5DJMTUVrnewoX.QEXgea6EiqaoKSq8B7bXjXwF7Bzbk7kmjX1gZgEOilK6u8Loa/n0
+              uid: 1111

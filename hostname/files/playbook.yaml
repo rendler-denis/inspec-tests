@@ -1,0 +1,7 @@
+- hosts: localhost
+  gather_facts: False
+  roles:
+    - role: hostname
+      vars:
+        hostname:
+          name: {{ test_hostname }}

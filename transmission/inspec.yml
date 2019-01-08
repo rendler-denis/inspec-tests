@@ -1,0 +1,11 @@
+---
+name:       transmission
+title:      Transmission app install and config
+maintainer: Denis Rendler <connect@rendler.me>
+copyright:  Denis Rendler <connect@rendler.me>
+license:    Proprietary, All rights reserved
+version:    1.0.0
+attributes:
+  - name: settings_path
+    type: string
+    default: '/home/pi/.config/transmission-daemon/settings.json'
